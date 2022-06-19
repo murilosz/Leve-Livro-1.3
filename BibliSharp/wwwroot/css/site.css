@@ -264,7 +264,10 @@ th{
     text-align: center;
 }
 .row {
-    
+    position: absolute;
+    max-height: 390px;
+    margin-bottom: 80px;
+    position: static;
     color: white;
     font-weight: bold;
     background-color: rgb(90, 90, 90, 0.25);
@@ -284,7 +287,7 @@ th{
 .form-group {
     text-align: center;
     width: 240px;
-    padding-left:;
+
     margin-left:9px;
 }
 
@@ -293,8 +296,253 @@ th{
     margin-left: 0px;
 }
 
-/*----------------------------------------------------------------------------------*/
 
-.col-sm-2{
-    margin-right:0px;
+.form{
+
 }
+.btn1 {
+    position: relative;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    /*  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;*/
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 75px;
+    margin-right: 100px;
+    right:95px;
+    width: 450px;
+    padding: 1.2em 90px 1.2em 90px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+    .btn1:hover, .btn:focus {
+        color: #fff;
+        outline: 0;
+    }
+
+    /*------------------------VARIAÇÃO DO BTN--------------------*/
+.btn2 {
+    position: relative;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    /*  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;*/
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 35px;
+    margin-right: 100px;
+    right: 95px;
+    width: 450px;
+    padding: 1.2em 90px 1.2em 90px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+    .btn2:hover, .btn:focus {
+        color: #fff;
+        outline: 0;
+    }
+
+
+
+
+
+
+.btn3 {
+    position: relative;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    /*  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;*/
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 250px;
+    margin-right: 100px;
+    right: 95px;
+    width: 450px;
+    padding: 1.2em 90px 1.2em 90px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+    .btn3:hover, .btn:focus {
+        color: #fff;
+        outline: 0;
+    }
+
+
+
+
+
+
+
+.btn4 {
+    position: relative;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border: 2px solid #e74c3c;
+    border-radius: 0.6em;
+    color: #e74c3c;
+    cursor: pointer;
+    /*  display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;*/
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1;
+    margin-top: 215px;
+    margin-right: 100px;
+    right: 105px;
+    width: 450px;
+    padding: 1.2em 90px 1.2em 90px;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+    .btn4:hover, .btn:focus {
+        color: #fff;
+        outline: 0;
+    }
+/*------------------------------EDITAR EMPRESTIMOS - BUGS----------------------------*/
+.col-sm-3{
+    left: 90px;
+    bottom:5px;
+    top:1px;
+}
+col-sm-11{
+    margin-top:10px;
+}
+
+
+.col-sm-3 col-sm-11 {
+    position: relative;
+    width: 100px;
+    text-align: center;
+}
+.dl1{
+    text-align:center;
+    width: 300px;
+}
+
+/*-----------------------TELA DE LOGIN--------------------*/
+.formulario-de-login {
+    font-size: 23px;
+    position: relative;
+    text-align: center;
+    margin-left: 300px;
+    margin-right: 300px;
+    top: 130px;
+    padding-top: 100px;
+    padding: 30px 0px 30px 0px;
+    border-radius: 30px;
+    height: 350px;
+    color: white;
+    font-weight: bold;
+    background-color: rgb(90, 90, 90, 0.70);
+    background-attachment: fixed;
+}
+/*.absoluto {
+    position:static;
+   border-radius: 0px 0px 21px 21px;
+    background-image: url(https://ae01.alicdn.com/kf/HTB1L_RoXwjN8KJjSZFgq6zjbVXad/Prateleira-de-livros-de-tecido-de-arte-fina-fundo-de-fotografia-biblioteca-pano-de-fundo-para.jpg);*/
+    /*width:1000px;*/
+    /*height: 736px;
+    
+}*/
+.absoluto {
+    position: absolute;
+    border-radius: 0px 0px 21px 21px;
+    background-image: url(https://ae01.alicdn.com/kf/HTB1L_RoXwjN8KJjSZFgq6zjbVXad/Prateleira-de-livros-de-tecido-de-arte-fina-fundo-de-fotografia-biblioteca-pano-de-fundo-para.jpg);
+    /*width:1000px;*/
+    height: 910px;
+    width: 1920px;
+    right: 0px;
+    left: 0px;
+    top:58px;
+    bottom: 0px;
+}
+
+
+.paragrafo-senha{
+   margin-top:30px;
+}
+
+.input-usuario{
+    margin-top:10px;
+    
+}
+.input-senha {
+    margin-top: 10px;
+}
+
+.botao-login{
+    margin-top:30px;
+
+}
+
+
+
+
+
+
+

@@ -16,23 +16,25 @@
     @ViewBag.Message
 </div>
     }
-<table>
-    <tr>
-        <td>@Html.LabelFor(a => a.NomeUsuario,"Usuario")</td>
-        <td>@Html.TextBoxFor(a => a.NomeUsuario)</td>
-        <td>@Html.ValidationMessageFor(a => a.NomeUsuario)</td>
-    </tr>
-    <tr>
-        <td> @Html.LabelFor(a => a.Senha)</td>
-        <td> @Html.PasswordFor(a => a.Senha) </td>
-        <td> @Html.ValidationMessageFor(a => a.Senha) </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td>
-            <input type="submit" value="Login" />
-        </td>
-        <td></td>
-    </tr>
-</table>
-}
+<div class="absoluto">
+
+        <div class="formulario-de-login">
+                <div class="username">
+                        <div class="paragrafo-usuario">@Html.LabelFor(a => a.NomeUsuario,"Usuario")</div>
+                        <div class="input-usuario">@Html.TextBoxFor(a => a.NomeUsuario)</div>
+                        <div>@Html.ValidationMessageFor(a => a.NomeUsuario)</div>
+                </div>
+                <div class="password">
+                        <div class="paragrafo-senha"> @Html.LabelFor(a => a.Senha)</div>
+                        <div class="input-senha"> @Html.PasswordFor(a => a.Senha) </div>
+                        <div> @Html.ValidationMessageFor(a => a.Senha) </div>
+                </div>
+                <div>
+                        <div class="botao-login">
+                            <input type="submit" value="Entrar" />
+                        </div>
+        
+                </div>
+        </div>
+</div>
+    }

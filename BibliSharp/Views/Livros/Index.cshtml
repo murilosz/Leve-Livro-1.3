@@ -29,17 +29,17 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
-            <td>
+        <tr class="linhas_livros">
+            <td class="coluna_nome">
                 @Html.DisplayFor(modelItem => item.Nome)
             </td>
-            <td>
+            <td class="coluna_editora">
                 @Html.DisplayFor(modelItem => item.Editora)
             </td>
-            <td>
+            <td class="coluna_autora">
                 @Html.DisplayFor(modelItem => item.Autora)
             </td>
-            <td>
+            <td class="coluna_ano">
                 @Html.DisplayFor(modelItem => item.Ano)
             </td>
             <td>

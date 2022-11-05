@@ -87,7 +87,7 @@ namespace BibliSharp.Controllers
                         id = usuario.Id.ToString();
                     }
                 }
-                if(!string.IsNullOrWhiteSpace(nomeUsuario))
+                if (!string.IsNullOrWhiteSpace(nomeUsuario))
                 {
                     var claims = new List<Claim>
                     {

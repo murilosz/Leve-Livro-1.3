@@ -28,6 +28,31 @@ namespace BibliSharp.Controllers
             return View(await _context.Emprestismos.ToListAsync());
         }
 
+        // GET: Emprestismos
+        public async Task<IActionResult> IndexDetail()
+        {
+            List<DetailsEmprestismoViewModel2> model = new List<DetailsEmprestismoViewModel2>();
+            var emprestismos = await _context.Emprestismos.ToListAsync();
+
+            foreach (var emprestismo in emprestismos)
+            {
+                Aluno aluno = (await _context.Alunos.FirstOrDefaultAsync(a => a.Id == emprestismo.AlunoId));
+                Livro livro = (await _context.Livros.FirstOrDefaultAsync(a => a.Id == emprestismo.LivroId));
+
+                model.Add(
+                    new DetailsEmprestismoViewModel2()
+                        {
+                            Aluno = aluno.Nome + " " + aluno.Sobrenome,
+                            AlunoPeriodo = aluno.Periodo,
+                            AlunoTurma = aluno.Sala,
+                            Livro = livro.Nome,
+                            Emprestismo = emprestismo
+                        });
+            }
+
+            return View(model);
+        }
+
         // GET: Emprestismos/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -83,7 +108,7 @@ namespace BibliSharp.Controllers
 
                 _context.Add(emprestismo);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(IndexDetail));
             }
             return View(emprestismo);
         }
@@ -181,12 +206,34 @@ namespace BibliSharp.Controllers
             var emprestismo = await _context.Emprestismos.FindAsync(id);
             _context.Emprestismos.Remove(emprestismo);
             await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(IndexDetail));
         }
 
         // GET: Emprestismos/VerSemDevolucao
         public async Task<IActionResult> VerSemDevolucao()
         {
+
+            List<DetailsEmprestismoViewModel2> model = new List<DetailsEmprestismoViewModel2>();
+            var emprestismos = await _context.Emprestismos.Where(e => e.DataEntrega == DateTime.MinValue).ToListAsync();
+
+            foreach (var emprestismo in emprestismos)
+            {
+                Aluno aluno = (await _context.Alunos.FirstOrDefaultAsync(a => a.Id == emprestismo.AlunoId));
+                Livro livro = (await _context.Livros.FirstOrDefaultAsync(a => a.Id == emprestismo.LivroId));
+
+                model.Add(
+                    new DetailsEmprestismoViewModel2()
+                        {
+                            Aluno = aluno.Nome + " " + aluno.Sobrenome,
+                            AlunoPeriodo = aluno.Periodo,
+                            AlunoTurma = aluno.Sala,
+                            Livro = livro.Nome,
+                            Emprestismo = emprestismo
+                        });
+            }
+
+            return View(model);
+
             return View(await _context.Emprestismos.Where(e => e.DataEntrega == DateTime.MinValue).ToListAsync());
         }
         private bool EmprestismoExists(int id)

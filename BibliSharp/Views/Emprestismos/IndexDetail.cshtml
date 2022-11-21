@@ -4,14 +4,14 @@
     ViewData["Title"] = "Inicio";
 }
 
-<h1>Inicio</h1>
+<h1>Empréstimos</h1>
 
 <p>
     <a asp-action="Create">Criar Novo</a>
     <label> | </label>
     <a asp-action="VerSemDevolucao"> Ver Livros que Faltam</a>
     <label> | </label>
-    <a asp-action="IndexDetail"> Ver Todos</a>
+    <a asp-action="Index"> Ver Todos</a>
 </p>
 <table class="table">
     <thead>
@@ -50,55 +50,53 @@
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Emprestismo.EmprestismoId)
-                </td>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Emprestismo.EmprestismoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Livro)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Aluno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlunoPeriodo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlunoTurma)
+            </td>
 
-                <td>
-                    @Html.DisplayFor(modelItem => item.Livro)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Aluno)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AlunoPeriodo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.AlunoTurma)
-                </td>
-
-                <td>
+            <td>
                     @Html.DisplayFor(modelItem => item.Emprestismo.DataRetirada)
-                </td>
-                <td>
+            </td>
+            <td>
                     @Html.DisplayFor(modelItem => item.Emprestismo.CriadoPor)
-                </td>
-                <td>
+            </td>
+            <td>
                     @Html.DisplayFor(modelItem => item.Emprestismo.DataLimite)
-                </td>
-                <td>
+            </td>
+            <td>
                     @if (item.Emprestismo.DataEntrega != DateTime.MinValue)
                         @Html.DisplayFor(modelItem => item.Emprestismo.DataEntrega)
 
-                </td>
-                <td>
+            </td>
+            <td>
                     @if (item.Emprestismo.DataEntrega != DateTime.MinValue)
                         @Html.DisplayFor(modelItem => item.Emprestismo.AlteradoPor)
 
-                </td>
-                <td>
+            </td>
+            <td>
                     @if (item.Emprestismo.DataEntrega == DateTime.MinValue)
-                    {
+                {
                         @Html.ActionLink("Edit", "Edit", new { id = item.Emprestismo.EmprestismoId })
-                        <label> | </label>
+                    <label> | </label>
                         @Html.ActionLink("Details", "Details", new { id = item.Emprestismo.EmprestismoId })
-                    }
-                    @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
-                </td>
-            </tr>
-        }
+                }
+                @*@Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+        </tr>
+}
     </tbody>
 </table>
